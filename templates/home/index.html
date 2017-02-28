@@ -1,1 +1,40 @@
+{% extends "base.html" %}
 
+{% block title %}Welcome to my wesite!{% endblock %}
+
+{% block content %}
+	<h1>Welcome to my website namalliv.com!</h1>
+	<p>The purpose of this website is to show some of the work I have done during my professional software developer life. This site was developed using Django framework with Python.</p>
+
+	<div id="shores">
+	<h1>Calendar</h1>
+	<table id="activity">
+		<p>{{ mymonth }}</p>
+		<tr><th class="cal_th">Sun </th><th class="cal_th">Mon </th><th class="cal_th">Tue </th>
+		<th class="cal_th">Wed </th><th class="cal_th">Thu </th><th class="cal_th">Fri </th><th class="cal_th">Sat </th></tr>
+		<tr>
+
+			{% for day in month_2017 %}
+				<td class="cal_data {%if day == today %}today{% endif %}">
+
+					{{ day }} <br />
+					{% for month_activity in fedays %}
+						{% if day == month_activity.day and month_activity.month == 2 %}
+							<span class="cal_text">{{ month_activity.activity }}</span>
+						{% endif %}
+					{% endfor %}
+				</td>
+				{% if forloop.last %}
+					</tr>
+				{% else %}
+		     		{% if forloop.counter|divisibleby:"7" %}
+		       		</tr><tr>
+		     		{% endif %}
+	   			{% endif %}
+			{% endfor %}
+	</table>
+	</div>
+	
+	
+{% endblock %}
+	

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+	People
+{% endblock %}
+
+{% block content %}
+	<h1> People</h1>
+	<hr>
+	<ul>
+	{% for p in pList %}
+		<li><a href="People/Info/{{ p.id }}/"> {{ p.firstname }} {{ p.lastname }} </a></li>
+	{% endfor %}
+	</ul>
+{% endblock content %}
+	
+{% block content2 %}
+	<ul>
+		<li>namalliv2@hotmail.com</li>
+		<li><a href="http://people.oregonstate.edu/~villaman/"> www.foramerican.com </a></li>
+	</ul>
+{% endblock content2 %}

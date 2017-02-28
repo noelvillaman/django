@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+	See it
+{% endblock %}
+
+{% block content %}
+	<form method="post" action="/home/result/">
+		<p>Enter your name</p>
+		<p><input type="text" name="nombre"></p>
+		<p>Enter you last name</p>
+		<p><input type="text" name="apellido"></p>
+		<p>Enter number for the table of that number</p>
+		<p><input type="number" name="table1"></p>
+		<p><input type="submit" name="Submit"></p>
+
+		
+	</form>
+{% endblock content %}
+	
+{% block content2 %}
+{% endblock content2 %}

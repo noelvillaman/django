@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Contact Us
+{% endblock %}
+
+{% block content %}
+	<div id="overview">
+	<h2>Assignment Overview:</h2>
+      <P>A word search is a word puzzle that consists of seemingly random letters arranged in a square or 
+	   rectangular grid.  The object of the game is to find all of the words from a given list hidden in
+         the grid.  Words may be hidden vertically, horizontally or diagonally within the grid.  Specifically,
+         a word may start at a particular row, column coordinate, and the rest of the word can be found by 
+	   following one of eight possible directions: northwest, north, northeast, west, east, southwest, south, 
+	   or southeast.
+      <P>In this assignment, you will complete the WordSearchFrame class by writing functions to find the words 
+	   in a list in a word search.  Your tasks are as follows:
+         <OL>
+	         <LI>Complete the actionPerformed(ActionEvent event) function in the SearchListener.<BR>
+			 The first time the search button is clicked, the first word in the word list changes color to red.
+		       The program then finds that word in the word search.  If the word is found, the letters corresponding 
+			 to that word are changed to red on the word search.  Note that if the word is hidden multiple times in 
+			 the word search, you only need to find the word once (there is no need to find all instances of that 
+			 word).  When the search button is clicked again, the first word in the word list changes color back to
+			 black.  The letters of the first word in the word search are also converted back to black.  The second 
+			 word now becomes red and the program finds and highlights the second word in the word search puzzle.  
+			 This continues until the end of the word list, at which point, the current word wraps back to the first
+			 word in the word list.  You can play with the applet below to get a feel for how this works.
+	         <LI>In order to do the first task, you will need a find function to look for a specific word in the word 
+			 search.  <B>Your find function will consist of two parts.  The starter function loops through each row,
+			 column, and direction.  For a given row, column, and direction, you need to write a helper function 
+			 which finds the word recursively.  Note that you will get zero on this part if your find helper 
+			 function is not recursive.</B>  Remember that a recursive function has a base case that tells it when 
+			 to stop and a recursive step in which the function calls itself with a simpler input.
+	   </OL>
+	   </
+	   	P>
+
+<P>In order to run the code, you will need to pass in command line arguments (take a look at assignment #3 if 
+you forget how to do this).   There are two command line arguments: a word search file, and a word list file.  
+You can download samples from below.  Remember that you may have to specify the full path name of your files 
+eg. C:\\CS162\\assn4\\wordsearch.txt instead of just wordsearch.txt</P>
+
+<pre>
+	private void findword2(int x, int y, String word2) {
+			int index = 0;
+			if (index == word2.length())
+				return;
+			if (y == numCols) {
+				return;
+
+			} else
+				try {
+					findword2(x + 1, y + 1, word2);
+					if (wordSearch[x][y].getText().charAt(0) == (word2.charAt(index))) {
+						wordSearch[x][y].setForeground(Color.RED);
+						index++;
+					}
+
+				} catch (ArrayIndexOutOfBoundsException e) {
+					return;
+			}
+		}
+</pre>
+
+<P>Finally, you may add functions and member variables to the code as you wish.</P>
+
+	
+</div>
+
+{% endblock content %}
+	
+{% block content2 %}
+{% endblock content2 %}
+

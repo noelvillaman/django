@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Contact Us
+{% endblock %}
+
+{% block content %}
+
+	<p>Hello {{ nombre }} {{ apellido }}</p>
+
+	<p>The multiplication table of {{ table }} is: </p>
+	<p>
+	{% for number in numbers %}
+		{{ number }}&nbsp;
+	{% endfor %}
+	</p>
+	
+
+{% endblock content %}
+	
+{% block content2 %}
+{% endblock content2 %}

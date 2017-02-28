@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}Welcome to my bigarray!{% endblock %}
+
+{% block content %}
+
+	<h1>A Big Good Array</h1>
+
+	{% for element in myarr %}
+		<p>{{ element }}</p>
+		{% if forloop.counter|divisibleby:1 %}
+			<br>
+		{% endif %}
+	{% endfor %}
+	<h1>The maximum product of four digits in this array is: {{ grande|intcomma }}</h1>
+
+	<p>The four numbers that make this product are ({{ cuatro|join:", " }})</p>
+
+	<h2>Here is the array result from multiplying four digits in any direccion from the above array.</h2>
+	<div style="overflow-x: auto">
+	<table>
+		<tr>
+		{% for i in group_of_results %}
+			<td class="formation {% if i == 70600674 %}highlighted{% endif %}">
+				{{ i|intcomma }}
+			</td>
+			{% if forloop.counter|divisibleby:11 %}
+			<tr></tr>
+			{% endif %}
+			
+		{% endfor %}
+		</tr>
+	</table>
+	</div>
+
+	
+	
+	
+	
+{% endblock %}
+	
