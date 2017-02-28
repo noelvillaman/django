@@ -1,0 +1,166 @@
+{% load static %}
+{% load i18n %}
+
+
+
+<!doctype html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="utf-8">
+	<title>amalliv.com | {% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'imagenes/apple-icon-57x57.png' %}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{% static 'imagenes/apple-icon-60x60.png' %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'imagenes/apple-icon-72x72.png' %}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'imagenes/apple-icon-76x76.png' %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'imagenes/apple-icon-114x114.png' %}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'imagenes/apple-icon-120x120.png' %}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'imagenes/apple-icon-144x144.png' %}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{% static 'imagenes/apple-icon-152x152.png' %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'imagenes/apple-icon-180x180.png' %}">
+	<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'imagenes/android-icon-192x192.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'imagenes/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'imagenes/favicon-96x96.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'imagenes/favicon-16x16.png' %}">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{% static '/ms-icon-144x144.png' %}">
+	<meta name="theme-color" content="#ffffff">
+
+	<script type="text/javascript" src="{% static 'scripts.js' %}"></script>	
+	<link rel="stylesheet" href="{% static 'styles.css' %}">
+
+	
+</head>
+
+<body>
+	<div id="verytop">
+	
+		<nav>
+			<ul class="topnav" id="myTopnav">
+				
+		  		<li {% if section == "dashboard" %} class="selected" {% endif %}><a href="{% url 'index' %}">namalliv.com</a></li>
+		  		<li><a href="{% url 'People:people_home' %}">People</a></li>
+		  		<li><a href="{% url 'blog:post_list' %}">Blog</a></li>
+		  		<li><a href="{% url 'about' %}">About</a></li>
+		  		<li><a href="{% url 'contact' %}">Contact</a></li>		  		
+		  		<li><span class="user">
+					{% if request.user.is_authenticated %}
+						
+						Hello {{ request.user.first_name }},
+						<a href="{% url 'logout' %}">Logout</a>
+					{% else %}
+						<a href="{% url 'login' %}">Log-in</a>
+						{% endif %}
+					</span>
+
+		  		</li>
+		  		<li><a href="{% url 'cart:cart_detail' %}"><img src="{% static 'imagenes/cart_white_1x.png' %}" title="Go your cart"></a></li>
+		  		<li class="icon">
+		    		<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+		  		</li>
+			</ul>
+		</nav>
+	</div>
+	<div id="container">
+		<div id="banner"><img src="{% static 'imagenes/namalliv_large.png' %}" title="My Personality"></div>
+		<div id="content">
+		<header>
+	
+		</header>
+		</div>
+		<div id="message">
+			{% if messages %}
+				<ul class="message">
+					{% for message in messages %}
+						<li class="{{ message.tags }}">
+							{{ message|safe }}
+							<a href="#" class="close">X</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+		<div id="main">
+
+			{% block content %}
+			{% endblock content %}
+			{% block back %}				
+			{% endblock back %}
+			<section>
+				<script>
+					$(document).ready(function(){
+						{% block domready %}
+						{% endblock %}
+					})
+				</script>
+			</section>		
+
+		</div>	
+		
+	</div>
+		<footer>
+
+			<div id="footer">
+			{% block links %}
+					<a href="{% url 'index' %}">Home</a>|<a href="{% url 'People:people_home' %}">People</a>|<a href="{% url 'blog:post_list' %}">Blog</a>|
+					<a href="{% url 'home:reading' %}">Reading File</a>|<a href="{% url 'contact' %}">Contact me</a>|<a href="{% url 'home:bigarray' %}">Big Array</a>|
+					<a href="{% url 'games_in_month' 4 %}">Angels Baseball Schedule</a>|<a href="{% url 'about' %}">About me</a>
+			{% endblock  %}
+			</div>
+			
+		</footer>
+</body>
+<script>
+
+	$(document).ready(function(){
+	       $("td").each(function(){
+	       var l = $(this).text().length;
+	       if(l < 5){
+	           $(this).append("<br />No game today" + $(this).text().length);
+	        }
+	    });
+	});
+
+	$(document).ready(function(){
+		var search = ["vs"];
+
+		$("td").filter(function() {
+		    var found = 0;
+		    $(this).each(function() {
+		        var text = $(this).text();
+		        for (var i = 0; i < search.length; i++) {
+		            if (text.indexOf(search[i]) != -1) found++;
+		        }
+		    });
+		    return found == search.length;
+		}).addClass("tdhome");
+
+		$("td").filter(function() {
+		    var found = 0;
+		    $(this).each(function() {
+		        var text = $(this).text();
+		        if (text.indexOf("@") != -1) found++;
+		    });
+		    return found == search.length;
+		}).addClass("tdaway");
+
+		$("td").filter(function() {
+
+		    var found = 0;
+		    $(this).each(function() {
+		    	var cosa = $(this).text().trim()=="";
+		        if (cosa == true){
+		         	found++;
+		        }
+		    });
+		    return found == search.length;
+		}).addClass("day-off");
+	});
+</script>
+</html>
