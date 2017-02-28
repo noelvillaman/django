@@ -1,0 +1,893 @@
+@charset "utf-8";
+/* CSS Document 
+#C6D580 light
+*/
+@font-face {
+    font-family: 'TheanoModernRegular';
+    src: url('/_assets/College-font/TheanoModern-Regular-webfont.eot');
+    src: url('TheanoModern-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('TheanoModern-Regular-webfont.woff') format('woff'),
+         url('TheanoModern-Regular-webfont.ttf') format('truetype'),
+         url('TheanoModern-Regular-webfont.svg#TheanoModernRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'CollegeRegular';
+    src: url('/_assets/College-font/COLLEGE-webfont.eot');
+    src: url('/_assets/College-font/COLLEGE-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_assets/College-font/COLLEGE-webfont.woff') format('woff'),
+         url('/_assets/College-font/COLLEGE-webfont.ttf') format('truetype'),
+         url('/_assets/College-font/COLLEGE-webfont.svg#CollegeRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CollegeBold';
+    src: url('/_assets/College-font/COLLEGEB-webfont.eot');
+    src: url('/_assets/College-font/COLLEGEB-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_assets/College-font/COLLEGEB-webfont.woff') format('woff'),
+         url('/_assets/College-font/COLLEGEB-webfont.ttf') format('truetype'),
+         url('/_assets/College-font/COLLEGEB-webfont.svg#CollegeBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CollegeSemicondensedRegular';
+    src: url('/_assets/College-font/COLLEGES-webfont.eot');
+    src: url('/_assets/College-font/COLLEGES-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_assets/College-font/COLLEGES-webfont.woff') format('woff'),
+         url('/_assets/College-font/COLLEGES-webfont.ttf') format('truetype'),
+         url('/_assets/College-font/COLLEGES-webfont.svg#CollegeSemicondensedRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CollegeCondensedRegular';
+    src: url('/_assets/College-font/COLLEGEC-webfont.eot');
+    src: url('/_assets/College-font/COLLEGEC-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_assets/College-font/COLLEGEC-webfont.woff') format('woff'),
+         url('/_assets/College-font/COLLEGEC-webfont.ttf') format('truetype'),
+         url('/_assets/College-font/COLLEGEC-webfont.svg#CollegeCondensedRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ChunkFiveRegular';
+    src: url('/_assets/ChunkFive-font/Chunkfive-webfont.eot');
+    src: url('/_assets/ChunkFive-font/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_assets/ChunkFive-font/Chunkfive-webfont.woff') format('woff'),
+         url('/_assets/ChunkFive-font/Chunkfive-webfont.ttf') format('truetype'),
+         url('/_assets/ChunkFive-font/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {margin:0; padding:0;}
+
+html, body {margin:0; 
+	padding:0; 
+	height:100%;
+	min-height:100%;
+	min-width:1000px;
+}
+
+html 
+{
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 22px;
+    font-size: 2.2rem;
+	font-family: Verdana, Geneva, sans-serif;
+	background: #c0c0c0;
+}
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
+html {overflow:scroll;}
+/*html { -webkit-text-size-adjust: 100%; }*/
+
+/************************************************************************************
+RESET
+*************************************************************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+a {text-decoration: none;}
+
+img, fieldset {
+	border: 0;
+}
+
+/* set image max width to 100% */
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+
+/*Used from http://www.cssstickyfooter.com/*/
+
+ul, ol {
+	/*margin: 1em 0 1.4em 24px;*/
+	padding: 0;
+	line-height: 140%;
+/*	font-size: 0.8484em;*/
+}
+/*li {
+	margin: 0 0 .5em 0;
+	padding: 0;
+}*/
+
+/*============================class float ====================================================*/
+.float {clear:both;}
+/*================ ================Section header====================================================*/
+
+header {
+	background:url(images/city1.jpg);
+	background-size:cover;
+	margin-bottom: 0;
+	height: 180px;
+}
+
+/*================ ===================Bloq #banner====================================================*/
+#banner {background: #FC6;
+}
+/*================ ===================Bloq #container====================================================*/
+
+
+#container {
+ 	text-align: left;
+	margin: 0 auto;
+	padding: 0;
+	width: 1083px;
+	background:#FFF url(images/gradient.gif)repeat-y;
+	min-height:100%;
+	-webkit-box-shadow: 0 0 50px #000;
+	box-shadow: 0 0 50px #000;
+}
+
+/*================ ===================Bloq #content====================================================*/
+
+#content {
+	overflow:auto;
+	padding-bottom:50px;
+	
+}
+
+/*================ ===================Bloq #content====================================================*/
+section li {list-style:none;}
+
+/*================ Section Nav====================================================*/
+#content nav ul {
+	background: #C6D580;
+	overflow: hidden;
+	list-style: none;
+	margin:0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+	zoom: 1;
+	-moz-transition: max-height 0.4s;
+	-ms-transition: max-height 0.4s;
+	-o-transition: max-height 0.4s;
+	-webkit-transition: max-height 0.4s;
+	transition: max-height 0.4s;
+}
+
+#content nav ul li {
+	float: left;
+
+}
+
+#content nav ul li:hover {
+	background: #1D4B00;
+	border: 1px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px; /* Safari 4 and earlier */
+	border-radius: 5px;
+
+}
+
+#content nav ul a:hover {
+		color: #C6D580;
+}
+
+#content nav ul li a {
+	color: #2C0238;
+	width: 5.5em;
+	display: block;
+	margin-right: 5px;
+	padding: 10px;
+	text-align: center;
+}
+
+#content nav ul li:last-child {
+	text-align: right;
+}
+
+#content nav ul li:first-child {
+	text-align: left;
+}
+
+
+/*============================ Second navigation on the right================================*/
+#second nav li {
+	list-style: none;
+}
+
+#second ul li {
+	list-style: none;
+}
+.current, .current a { 
+	pointer-events: none;
+   	cursor: default;
+	margin-top: -3px;
+	height: 100%;
+	color:red;
+	-moz-box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	-webkit-box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	text-shadow: 1px 1px 1px 1px hsla(0,0%,100%,.7);
+}
+
+/*================ Section #image====================================================*/
+#image {
+		
+		max-width:100%;
+		height:200px;
+		background:url(images/city.jpg);
+		background-size:cover;
+		margin: 0 auto 10px auto;
+		-webkit-box-shadow: 0 0 50px #000;
+		box-shadow: 0 0 50px #000;
+	}
+
+/*================ Section article ====================================================*/
+article.verses a {text-decoration: none;
+	color: hsla(240,100%,50%,1); 
+}
+article.verses a:hover {text-decoration:underline;
+color:#030;
+background:hsla(0,100%,50%,1);
+}
+/*================ Section Section with id=verses ====================================================*/
+#verses a {text-decoration: none;
+	color: hsla(240,100%,50%,1);
+}
+
+#verses a:hover { text-decoration:underline;
+color:#000000;
+}
+
+#verses a.verses { text-decoration:none;
+color:#000000;
+}
+/*================ Section Section with id=second ====================================================*/
+#second {
+	float: right; /* left was here before */
+	width: 25%;/*227px;*/
+	color: #000;
+	margin: 0 auto;
+	padding: 10px;
+	font-size:100%;
+}
+#container h1 {
+	font-family:ChunkFiveRegular, "Courier New", Courier, monospace;
+	text-align:center;
+	font-size: 2.75em;
+	color: hsla(120,100%,30%,1);
+	text-shadow:5px 7px 3px #333;
+}/*25px;*/
+/*	font-size: 2.75rem;
+	color: hsla(120,100%,30%,1);
+	margin-top: 30px;
+}
+#second p {
+	margin: 5px 15px 0 15px;
+	text-align: justify;
+}*/
+#second img {
+	/*width: 235px;
+	height: 200px;*/
+	margin:0 15px 0 2px;
+	border: 3px;
+	border-radius: 25px;
+	box-shadow:10px 10px 5px gray;
+	border-bottom: 15px;
+	
+}
+/*#second table {width: 200px;}*/
+#second table th {
+	background: #ccc url(images/gradient1.gif) repeat-x fixed;
+	color:#063;
+
+}
+
+/*table td {
+	background: #FFF;
+	color:#003300;
+	padding: 10px;
+}*/
+
+#second table td {
+	background: #FFF;
+	color:#003300;
+	padding: 10px;
+}
+
+#second table li { list-style-image:url(images/imglist.png);
+	margin: 5px 15px;
+}
+
+
+/*================ Section section ====================================================*/
+.text2Col {
+	-moz-column-count: 2;
+	-moz-column-gap: 1em;
+	-webkit-column-count:2;
+	-webkit-column-gap: 1em;
+	column-count:2;
+	column-gap: 1em;
+	text-align:justify;
+	margin-top: 10px;
+}
+#main {
+	
+	float: left; /* rith was here */
+	background:hsla(0,0%,100%,1);
+	width: 65%;
+	/*font-size: 1.23em;*/
+	padding: 1%;
+	/*line-height: 1em;*/
+	/*padding: 0px 15px 100px 15px;*/
+	/*color: #3914af;*/
+	margin: 3% 1%;
+}
+
+.center {
+	position:relative;
+	text-align: justify;
+	background:hsla(0,0%,100%,1);
+	width: 100%;
+	padding: 0px 15px 100px 15px;
+	margin: 0 auto;
+}
+
+#second h1 {font-family:ChunkFiveRegular, "Courier New", Courier, monospace;
+	/*text-transform:uppercase;*/
+	font-size: 1.5em;
+	margin-top: 10%;
+	margin-bottom: 3%;
+	text-shadow: 2px 4px 3px #333;
+	
+	/*color: #008500;*/
+}
+
+#container ul li {
+	list-style: none;
+}
+
+
+
+#main a.man {font-family:ChunkFiveRegular, "Courier New", Courier, monospace;
+           text-decoration: none;
+		   font-size: .8em;
+	       color: #900;
+	       font-weight: bold;
+}
+
+table {
+	border: 5px;
+	border-color: #FFFFFF;
+	
+}
+
+#main table.inmain {
+	border: 5px;
+	border-color: #FFFFFF;
+	-moz-box-shadow:    10px 10px 5px 6px #ccc;
+  	-webkit-box-shadow: 10px 10px 5px 6px #ccc;
+  	box-shadow:         10px 10px 5px 6px #ccc;
+	width: 100%;
+}
+
+ /*h1, h2, h3, h4, h5, h6 {color: #5e2605}*/
+
+#main caption h2 {
+	font-family:ChunkFiveRegular, "Courier New", Courier, monospace;
+	text-align:center;
+	font-size: 2.75em;
+	color: #808080;
+	text-shadow:5px 7px 3px #333;
+}/*25px;*/
+
+table th {
+	color: #808080;
+	padding: 2%;
+}
+
+table td {
+	padding: 2%;
+}
+
+
+table.nada tr{
+	background:#FFFFFF;
+	
+}
+table.nada th, td {
+	color: #000;
+	text-align: left;
+	border-bottom:#FFF;
+}
+#main table {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+table tr {
+	padding: 2%;
+}
+
+table a {
+	display: block;
+	text-decoration: none;
+	color:hsla(52,95%,55%,1);
+}
+
+/*tr {
+	background: #008500;
+}*/
+tr:nth-child(even) {background-color: #008500;
+
+}
+
+.center tr:hover {
+	top: -5px;
+	left: -5px;
+	-moz-box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	-webkit-box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	box-shadow: 3px 3px 2px hsla(0,0%,0%,.3);
+	text-shadow: 1px 1px 1px 1px hsla(0,0%,100%,.7);	
+}
+
+
+tr.alternate:hover {
+	background: #5e2605;
+}
+tr:nth-child(odd) {background: #269926}
+/*tr.alternate2 {
+	background:hsla(146,75%,55%,.89);
+}*/
+
+tr.alternate2:hover {
+	background: #5e2605;
+	color: hsla(146,75%,15%,.89)
+}
+
+th {
+	background: #5e2605;
+	/*background: #008500;*/
+}
+
+#main p:first-letter {
+	font-size: 150%;
+	color: #030;
+	margin-left:20px;
+}
+
+/*#main span {
+	font-size: 1.25em;/*20px;/
+}*/
+
+/*================ ===================Section #contact====================================================*/
+#contact dfn {
+	color: #000;
+	margin-left: 25px;
+	font-family: Tahoma, Geneva, sans-serif
+
+}
+/*=====================================Testimonies=======================================*/
+#main p.text {font-size:14px;}
+/*#main h1.testimony {font-size:10px}*/
+#main a.table {color:#0066FF}
+#main a.man {color:#990000;}
+#main a:hover {color: #333;}
+/*======================================Aside Section====================================*/
+aside {
+	   /*width: 200px;*/
+       height: auto;
+	   margin: 0;
+	   padding: 10px;
+	   background: #999999; /*#1E90FF;*/
+	   font-family:ChunkFiveRegular, "Courier New", Courier, monospace;
+	   color: #330033;
+	   /*border: 0.3125em dashed;*/
+	   border-radius: 25px;
+	   -webkit-box-shadow: 0 0 25px #333333;
+	   box-shadow: 0 0 25px #333333;
+	   text-align: center;
+}
+
+aside span.verseday {color: #FFFF00;}
+
+aside h1,h2,h3,h4,h5,h6 { font-size: 2em; text-align:center; margin: 10px; color: #990033; text-shadow:5px 7px 3px #333;}
+
+/*==================================Blockquote==========================================*/
+/*blockquote {margin: 10px 0 10px 50px;}
+*/
+/*=====================================Form tags=========================================================*/
+
+form {margin: 10px; padding: 10px;}
+fieldset {margin: 10px; padding: 10px; border:13px thick; border-radius: 10px 5px; font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;} 
+legend {
+	margin-left: 10px; 
+	border:13px #333; 
+	border-radius: 10px 5px;  
+}
+label {display:block; border: 3px #333; border-radius: 10px 5px; font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;}
+input { font-family:Tahoma, Geneva, sans-serif; font-size:14px; color: hsla(0,100%,50%,1); display: block;}
+input.buttons {
+	display:inline !important; 
+	border: 3px #0000FF; 
+	border-radius: 15px; 
+	text-align:center; 
+	font-family:Tahoma, Geneva, sans-serif; 
+	float:left; 
+	width: auto; 
+	height: auto; 
+	padding: 0.625em;
+}
+input.buttons:hover{ 
+			background-color:#990000; 
+			color: hsla(0,0%,100%,1); 
+			display:block; 
+			-moz-box-shadow:    0px 8px 6px -6px black;
+  			-webkit-box-shadow: 0px 8px 6px -6px black;
+ 			 box-shadow:         0px 8px 6px -6px black;
+}
+
+input.summit { margin: 5%;}
+textarea {width:90%; min-height: 200px; margin: 10px;}
+
+button, input, select, textarea {
+	vertical-align:baseline; *vertical-align: middle; 
+	-webkit-border-radius:8px 8px 8px 8px;
+    border-radius:8px 8px 8px 8px;
+    font-family:verdana, sans-serif;
+	padding: 1%;
+    }
+
+/*========================clear1 class p tag on contact page=============================*/
+p.clear1 {clear:left; margin: 10px;}
+
+/*====================Section footer ====================================================*/
+footer {
+	clear: both;
+	position:relative;
+	bottom:0;
+	width:1063px;
+	text-align: center;
+	padding: 10px;
+	background: #008500;
+	margin: -50px auto 0 auto;
+	height: auto;
+}
+footer a {
+	color:#ffcc00;
+	text-decoration:none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+/************************************************************************************
+This is the code for the div with class handler
+******************************************************************************/
+.handler {
+	width: 100%;
+	background: #7FBF90;
+	text-align: left;
+	font-size: 2em;
+	box-sizing: border-box;
+	padding: 15px 10px;
+	color: #430029;
+	display: none;
+	cursor: pointer;
+}
+
+.box-shadow-menu {
+  position: relative;
+  padding-left: 1.25em;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0.25em;
+  width: 1em;
+  height: 0.15em;
+  background: #606;
+  box-shadow: 
+    0 0.25em 0 0 #606,
+    0 0.5em 0 0 #606;
+}
+
+/************************************************************************************
+smaller than 1082px
+*************************************************************************************/
+@media screen and (max-width: 1082px) {
+
+	 disable webkit text size adjust (for iPhone) 
+	 
+	 #container {
+		 width: 96%;
+		 margin: 0 auto;
+	 }
+	
+	#second {
+		width: 28%;
+	}
+	
+	#main {
+		width: 65%;
+		margin-left: 0;
+		margin-right: 1%;
+	}
+	
+	#image object {
+		max-width: 100%;
+		height: auto;
+		min-height: 300px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 22px;
+		font-size: 2em;
+/*		line-height: 2em;*/
+		text-align: center;
+	}
+	header { text-align: center; padding: 5px 0; }
+	/*#header img { float: none; margin: 0 auto; padding-right: 0; }*/
+/*	header img { display: none; }*/
+	/* header */
+	nav ul li {
+		width: 33%;
+	}
+	
+	nav ul li a {
+		width: 90%;
+		margin-right: 0;
+	}
+	
+	#container {
+		width: auto;
+	}
+	
+	#main {
+		width: 65%;
+		font-size: 1.1em;
+	}
+	
+	.verses {width: auto;
+			font-size: 1.5em;
+	}
+	#second {
+		width: 28%;
+	}
+	
+	#image {
+		display: none;
+	}
+	
+	footer {
+		height: auto;
+	}
+	
+	button, input, select, textarea {
+		width: 90%;
+		font-size: 100%;
+	}
+	
+	nav { height: auto;}
+	nav ul li {
+		    float: left;
+			margin-bottom: 1%;
+			height: auto;
+			display: block;
+	}
+	
+	
+	article { 
+		width: auto;
+		height: auto;
+	}
+		
+	#second table {
+		width: auto;
+		margin-bottom: 10px;
+	}
+	
+	aside {width: 80%;
+			height: auto;
+	
+	}
+	
+
+	footer {
+		width: 98%;
+		font-size: 1.5em;
+	}
+	
+	/* embedded videos */
+	object
+	{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	/* disable webkit text size adjust (for iPhone) */
+	html {
+		-webkit-text-size-adjust: none;
+	}
+	
+	body {
+		font-size: 22px;
+		font-size: 2.2em;
+	}
+	
+	#container p {
+		font-size: 22px;
+		font-size: 2.2em;
+		line-height: 150%;
+	}
+	
+	#second img {
+		display: none;
+	}
+	
+	#second ul {
+		font-size: 22px;
+		font-size: 2.2em;
+	}
+	
+	
+	#content h1, h2, h3, h4, h5, h6 {
+		font-size: 2.5em;
+		text-align: left;
+		margin-bottom: 1em;
+		/*font-family: Verdana, Geneva, sans-serif;*/
+	}
+	
+	#second h1 {
+		font-size: 3em;
+		text-align: left;
+	}
+	
+	#container, #second, #main, #content {
+		width:auto;
+		float: none;
+		margin-right: 0;
+	}
+	
+	#main {
+		float: left;
+	}
+	
+	#second {
+		clear: left;
+	}
+	
+	.handler {
+		display: block;
+	}
+	
+	#main a.man {
+		font-size: 1.2em;
+	}
+
+	
+	#second aside, aside i, aside span{
+		font-size: 18px;
+		font-size: 1.8em;
+		width: auto;
+		height: auto;
+	}
+	
+	#second aside h1, h2, h3, h4, h5, h6 {
+		font-size: 2em;
+	}
+	
+	nav ul {
+		max-height: 0;
+	}
+	
+	.showing {
+		max-height: 24em;
+	}
+	nav ul li{
+		width: 50%;
+		box-sizing: border-box;
+		padding: 10px;
+		height: auto;
+		float: none;
+		margin-right: 0;
+		border: 5px solid gray;
+	}
+	
+	nav ul li a {
+		width: 100%;
+		margin-right: 1%;
+		height: auto;
+		font-size: 1.8em;
+
+	}
+	
+	table {
+		width: auto;
+		margin: 0;
+		padding: 2%;
+		font-size: large !important;
+	}
+	
+	table tr td, th {
+		font-size: 2.2em;
+		padding: 2%;
+	}
+	table th {
+		color: #CCC;
+	}
+	
+	footer {
+		height:auto;
+		font-size: 2.2em;
+	}
+	
+}
+
+@media screen and (max-width: 320px) {
+    
+ }
+
+/************************************************************************************
+CLEARFIX
+*************************************************************************************/
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix { display: inline-block; }
+.clearfix { display: block; zoom: 1; }
