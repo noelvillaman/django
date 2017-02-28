@@ -1,1 +1,14 @@
+{% extends "base.html" %}
 
+{% block content %}
+	<h1>Contact Me</h1>
+	<form name = "form" action = "{% url 'emailme' %}" method = "post" >
+		{{ form.as_p }}
+		{% csrf_token %}
+		<input type="submit" name="Submit" />
+	</form>
+	<p>No part of this form will be shared with anybody.</p>
+	
+	
+{% endblock content %}
+	
