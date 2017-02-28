@@ -8,13 +8,14 @@
 		<div id="shores">
 	<h1>Calendar</h1>
 	<div id="monthsearch"><button><</button><button>January 20017</button><button>></button></div>
+	<p>{{ num }} is a good day to be alive.</p>
 	<table>
 		<tr><th>Sun </th><th>Mon </th><th>Tue </th><th>Wed </th><th>Thu </th><th>Fri </th><th>Sat </th></tr>
 		<tr>
 
 			{% for day in month_2017 %}
 				<td>
-					<a href="{% url 'calendar_month_day' day %}">{{ day }}</a>
+					{{ day }}
 				</td>
 				{% if forloop.last %}
 					</tr>

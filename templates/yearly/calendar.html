@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+{% block title %}Welcome to my wesite!{% endblock %}
+
+{% block content %}
+	<h1>Welcome to my Calendar</h1>
+	<div id="monthsearch"><button><</button><button>January 20017</button><button>></button></div>
+	<table class="calendar1">
+	<tr>
+		{% for month in one_month %}
+			{% for day in month %}
+
+					<td>
+				{{ day }} <br />
+				
+				</td>
+				
+			{% if forloop.last %}
+			</tr>
+			{% else %}
+		     	{% if forloop.counter|divisibleby:"7" %}
+		       		</tr><tr>
+		     	{% endif %}
+	   		{% endif %}
+			{% endfor %}
+		{% endfor %}
+	</table>
+{% endblock %}

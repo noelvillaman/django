@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+{% block title %}Welcome to my wesite!{% endblock %}
+
+{% block content %}
+	<h1>Welcome to my <img src="http://mlb.mlb.com/mlb/images/team_logos/logo_ana_79x76.jpg"> Calendar</h1>
+	<div id="monthsearch"><button class="btn btn-primary"><</button><button class="btn btn-secondary" disabled="true">{{ month_title }} 20017</button><button class="btn btn-primary">></button></div>
+	<table class="calendar1" id="calendar_month">
+	<tr>
+		{% for day in one_month %}
+			
+				<td class="basseball_dato">
+					 {{ day }} <br />
+					 {% for game in mlbgames %}
+					  	{% if day  == game.date.day %}
+					  		<a href="{% url 'gameview' game.date.month game.date.day game.date.year game.game_id %}">{% if game.away_team == "Angels" %} @ {{ game.home_team }} {% else %} vs. {{ game.away_team }} {% endif %} </a>{{ game.date.time }} 
+					  {% endif %}
+					{% endfor %}
+					</td>
+					
+				{% if forloop.last %}
+				</tr>
+				{% else %}
+			     	{% if forloop.counter|divisibleby:"7" %}
+			       		</tr><tr>
+			     	{% endif %}
+		   		{% endif %}
+		   	
+		{% endfor %}
+	</table>
+
+	<div class="game_info">
+		<div id="caja1"></div><span class="home_color">Home</span>
+		<div id="caja2"></div><span class="away_color">Away</span>
+	</div>
+{% endblock %}
