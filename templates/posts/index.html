@@ -1,1 +1,17 @@
+{% extends "base.html" %}
 
+{% block title %}hoy{% endblock %}
+
+{% block content %}
+	<h1>Welcome to my website namalliv.com!</h1>
+	{{ nothing }}
+
+	{% for post in list_posts %}
+		<div class="posts">
+			<p>{{post.id}} <a href='{{ post.get_absolute_url }}'>{{ post.title }}</a> {{ post.timestamp|timesince }} ago {{ post.updated }}</p>
+		</div>
+	{%	endfor %}
+	
+	
+{% endblock %}
+	
