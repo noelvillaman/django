@@ -1,0 +1,463 @@
+* {margin: 0; padding: 0 }
+
+img {
+	max-width: 100%;
+    height: auto;
+}
+
+#verytop {background-color: #0047b3;}
+
+nav {width: 1200px; margin: 0 auto;}
+
+/*Unorder list formats*/
+ul.topnav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	
+}
+
+span.cal_text {
+  font-size: 10px;
+  color: #0047b3;
+}
+
+h2.post_id a {
+  font-size: 20px;
+  color: #000;
+}
+
+h2.post_id a:hover {
+  color: #ADD8E6;
+}
+
+hr.post_line {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr.post_line:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+td.basseball_dato {}
+
+
+
+div#caja1 {
+  height: 20px;
+  background: red;
+  width: 20px;
+  float: left;
+}
+div#caja2 {
+  height: 20px;
+  background: #ccc;
+  width: 20px;
+  float: left;
+  margin-left: 5px;
+}
+span.home_color { float: left; margin-left: 5px; color: #000;}
+span.away_color { float: left; margin-left: 5px; color: #000;}
+
+.calendar1, table.bigarray
+{
+  width: 100%;
+}
+
+td.highlighted {
+  color: red;
+  background-color: #ADD8E6;
+
+}
+
+td.formation, td.highlighted {
+  width: 5%;
+  text-align: right;
+  padding: 1%;
+  height: auto;
+}
+
+ul {list-style-type: none;}
+
+ul.topnav li, ul.module_item li, a.topnav {float: left;}
+
+ul.topnav li a, a.topnav {
+	display: inline-block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	transition: 0.3s;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+ul.module_item li a, a.topnav {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  transition: 0.3s;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover, a.topnav:hover {background-color: #0066ff;}
+
+ul.topnav li.icon {
+	display: none;
+	color: #fff;
+
+}
+
+li.post_list {
+  font-size: 1.9em;
+}
+
+aside{
+  background: #9AC0CD;
+  color: #fff;
+  padding: 1%;
+  float: left;
+  width: auto;
+  height: auto;
+}
+
+.right {
+  float: left;
+  padding: 1%;
+}
+
+#container {width: 1200px; margin: 0 auto; padding: 1%;}
+header {padding: 1%;}
+#main {padding: 1%;}
+	a {text-decoration: none;}
+
+
+span {
+    color: #fff;
+  }
+
+span.current {
+   color: #000;
+}
+
+.helptext {
+    display: block;
+    color: #00BFFF;
+}
+footer {
+  padding: 1%; 
+  text-align: center;
+  clear: both;
+  background-color: #3D3D3D;
+}
+
+footer a, footer p {
+  color: #fff;
+}
+
+#footer {
+  background: #3D3D3D;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Headers */
+h1 {font-size: 30px; margin-bottom: 2%; color: #1E90FF;}
+
+h2, h3, h4, h5, h6 {color: #0047b3;}
+
+th { background-color: #1E90FF; color: #fff; }
+
+.red {color: #ff0000}
+
+.selected {
+  color: #ffffff;
+}
+
+.user {
+  color: #FFF8DC;
+}
+
+.cart_img {
+  height: 20%;
+}
+
+img.profile {
+  height: 60px;
+  width: 60px;
+}
+
+.course {
+  color: #15359F;
+}
+
+#calendar_month, #activity {
+    border-collapse: separate;
+    border-spacing: 5px 2px;
+}
+
+
+ td {
+
+    width: 200px;
+    height: 200px;
+    padding: 1%;
+    margin: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table#activity td.cal_data {
+  width: 50px;
+  height: 50px;
+  background: #f2f2f2;
+    padding: 1%;
+    margin: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+p.date {
+  font-style: italic;
+  font-size: 14px;
+}
+
+table#activity th.cal_th, table#activity td.today {
+  padding: 1%;
+  background-color: #808080;
+  color: #CDD088;
+  font-style: bold;
+}
+
+
+
+table#calendar_month td.tdhome {
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  background: #480000; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#480000, red); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#480000, red); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#480000, red); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#480000, red); /* Standard syntax (must be last) */
+    padding: 1%;
+    margin: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table#calendar_month td.tdaway {
+  color: #000;
+  background: #A0A0A0  ; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#A0A0A0 , white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#A0A0A0  , white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#A0A0A0  , white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#A0A0A0  , white); /* Standard syntax (must be last) */
+    width: 200px;
+    height: 200px;
+    padding: 1%;
+    margin: 1px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table#calendar_month td.day-off {
+    padding: 1%;
+    margin: 1px;
+    text-align: left;
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+}
+
+/* This is for the list of posts */
+
+div.white_blog_list {
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+#clean {
+  clear: left;
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+
+  nav {
+  	width: auto;
+  }
+
+  #container, aside {
+  	width: 99%;
+  	padding: 1%;
+  }
+
+  .cart_img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+  .tdaway, .tdhome {
+      display: inline;
+      float:left;
+      width: 100%;
+      height: auto;
+  }
+
+  .tdaway, .tdhome {
+      display: block;
+      width: 100%;
+      height: auto;
+
+  }
+
+  .Baseball_th {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
