@@ -3,6 +3,8 @@ import calendar
 from datetime import date, datetime
 import mlbgame
 import math
+from nba_py import team, player, league, game, constants
+
 
 def month_days(d, n):
 	hold_days = []
@@ -41,10 +43,10 @@ def calendarListView(request):
 
 	
 	days_month_n = [
-		(date(2017, 2, 1) - date(2017, 1, 1)).days, (date(2017, 3, 1) - date(2017, 2, 1)).days, (date(2017, 4, 1) - date(2017, 3, 1)).days, 
-		(date(2017, 5, 1) - date(2017, 4, 1)).days, (date(2017, 6, 1) - date(2017, 5, 1)).days, (date(2017, 7, 1) - date(2017, 6, 1)).days, 
-		(date(2017, 8, 1) - date(2017, 7, 1)).days, (date(2017, 9, 1) - date(2017, 8, 1)).days, (date(2017, 10, 1) - date(2017, 9, 1)).days, 
-		(date(2017, 11, 1) - date(2017, 10, 1)).days, (date(2017, 12, 1) - date(2017, 11, 1)).days, (date(2018, 1, 1) - date(2017, 12, 1)).days, 
+		(date(2018, 2, 1) - date(2018, 1, 1)).days, (date(2018, 3, 1) - date(2018, 2, 1)).days, (date(2018, 4, 1) - date(2018, 3, 1)).days, 
+		(date(2018, 5, 1) - date(2018, 4, 1)).days, (date(2018, 6, 1) - date(2018, 5, 1)).days, (date(2018, 7, 1) - date(2018, 6, 1)).days, 
+		(date(2018, 8, 1) - date(2018, 7, 1)).days, (date(2018, 9, 1) - date(2018, 8, 1)).days, (date(2018, 10, 1) - date(2018, 9, 1)).days, 
+		(date(2018, 11, 1) - date(2018, 10, 1)).days, (date(2018, 12, 1) - date(2018, 11, 1)).days, (date(2018, 1, 1) - date(2018, 12, 1)).days, 
 	]
 
 
@@ -65,7 +67,7 @@ def monthid(num):
 def calendarMonthView(request, month_id=0):
 	month = calendar.Calendar(firstweekday=0)
 	weekDays = month.iterweekdays()
-	monthDay = month.itermonthdates(2017, 1)
+	monthDay = month.itermonthdates(2018, 1)
 	monthid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 	days_d = [
@@ -76,28 +78,28 @@ def calendarMonthView(request, month_id=0):
 	]
 	
 	days_month_n = [
-		(date(2017, 2, 1) - date(2017, 1, 1)).days, (date(2017, 3, 1) - date(2017, 2, 1)).days, (date(2017, 4, 1) - date(2017, 3, 1)).days, 
-		(date(2017, 5, 1) - date(2017, 4, 1)).days, (date(2017, 6, 1) - date(2017, 5, 1)).days, (date(2017, 7, 1) - date(2017, 6, 1)).days, 
-		(date(2017, 8, 1) - date(2017, 7, 1)).days, (date(2017, 9, 1) - date(2017, 8, 1)).days, (date(2017, 10, 1) - date(2017, 9, 1)).days, 
-		(date(2017, 11, 1) - date(2017, 10, 1)).days, (date(2017, 12, 1) - date(2017, 11, 1)).days, (date(2018, 1, 1) - date(2017, 12, 1)).days, 
+		(date(2018, 2, 1) - date(2018, 1, 1)).days, (date(2018, 3, 1) - date(2018, 2, 1)).days, (date(2018, 4, 1) - date(2018, 3, 1)).days, 
+		(date(2018, 5, 1) - date(2018, 4, 1)).days, (date(2018, 6, 1) - date(2018, 5, 1)).days, (date(2018, 7, 1) - date(2018, 6, 1)).days, 
+		(date(2018, 8, 1) - date(2018, 7, 1)).days, (date(2018, 9, 1) - date(2018, 8, 1)).days, (date(2018, 10, 1) - date(2018, 9, 1)).days, 
+		(date(2018, 11, 1) - date(2018, 10, 1)).days, (date(2018, 12, 1) - date(2018, 11, 1)).days, (date(2018, 1, 1) - date(2018, 12, 1)).days, 
 	]
 
-	month_2017 = []
+	month_2018 = []
 
 	for j in range(days_d[month_id]):
-		month_2017.append(" ") 
+		month_2018.append(" ") 
 	i = 1
 	while i <= days_month_n[month_id]:
 		if i < 10:
-			month_2017.append(i)
+			month_2018.append(i)
 		else:
-			month_2017.append(i)
+			month_2018.append(i)
 		i = i + 1
 
 	shores = []
 	for i in range(1, 32):
 		shores.append(str(i) + " Jugar con Ezra e Ishah")
-	return render(request, 'yearly/month.html', {'shores': shores, 'month_2017': month_2017, 'weekDays': weekDays, })
+	return render(request, 'yearly/month.html', {'shores': shores, 'month_2018': month_2018, 'weekDays': weekDays, })
 
 def day_calendarMonthView(request, num):
 	days = []
@@ -145,7 +147,8 @@ def calendarListView_month(request, month_game=1):
 	"""
 		This variables is to get the name of the month
 	"""
-	
+	mymonth = int(month_game)
+
 	month_title = "January"
 	for k, v in months.items():
 		if int(month_game) == k:
@@ -156,6 +159,8 @@ def calendarListView_month(request, month_game=1):
 	int(month_game)
 	if int(month_game) > 0 and int(month_game) <= 12:
 		the_game_day = int(month_game)
+	elif isinstance(int(month_game), str):
+		the_game_day = 1
 	else:
 		the_game_day = 1
 
@@ -170,13 +175,13 @@ def calendarListView_month(request, month_game=1):
 	]
 
 	days_month_n = [
-		(date(2017, 2, 1) - date(2017, 1, 1)).days, (date(2017, 3, 1) - date(2017, 2, 1)).days, (date(2017, 4, 1) - date(2017, 3, 1)).days, 
-		(date(2017, 5, 1) - date(2017, 4, 1)).days, (date(2017, 6, 1) - date(2017, 5, 1)).days, (date(2017, 7, 1) - date(2017, 6, 1)).days, 
-		(date(2017, 8, 1) - date(2017, 7, 1)).days, (date(2017, 9, 1) - date(2017, 8, 1)).days, (date(2017, 10, 1) - date(2017, 9, 1)).days, 
-		(date(2017, 11, 1) - date(2017, 10, 1)).days, (date(2017, 12, 1) - date(2017, 11, 1)).days, (date(2018, 1, 1) - date(2017, 12, 1)).days, 
+		(date(2018, 2, 1) - date(2018, 1, 1)).days, (date(2018, 3, 1) - date(2018, 2, 1)).days, (date(2018, 4, 1) - date(2018, 3, 1)).days, 
+		(date(2018, 5, 1) - date(2018, 4, 1)).days, (date(2018, 6, 1) - date(2018, 5, 1)).days, (date(2018, 7, 1) - date(2018, 6, 1)).days, 
+		(date(2018, 8, 1) - date(2018, 7, 1)).days, (date(2018, 9, 1) - date(2018, 8, 1)).days, (date(2018, 10, 1) - date(2018, 9, 1)).days, 
+		(date(2018, 11, 1) - date(2018, 10, 1)).days, (date(2018, 12, 1) - date(2018, 11, 1)).days, (date(2018, 1, 1) - date(2018, 12, 1)).days, 
 	]
 
-	a_month_games = mlbgame.games(2017, the_game_day, home="Angels", away="Angels")
+	a_month_games = mlbgame.games(2018, the_game_day, home="Angels", away="Angels")
 
 	mlbgames = mlbgame.combine_games(a_month_games)
 
@@ -194,9 +199,11 @@ def calendarListView_month(request, month_game=1):
 		name_months.append(game.date.date().strftime("%B"))
 		name_days.append(game.date.date().strftime("%A"))
 		hr.append(game.date.time())
+		
+	context = {'one_month': one_month, 'months': months, 'days': days, 
+		'mlbgames' : mlbgames,'game_days': game_days, 'locations': locations, 'the_game_day': the_game_day, 'month_title': month_title }
 
-	return render(request, 'yearly/calendar_month.html', {'one_month': one_month, 'months': months, 'days': days, 
-		'mlbgames' : mlbgames,'game_days': game_days, 'locations': locations, 'the_game_day': the_game_day, 'month_title': month_title })
+	return render(request, 'yearly/calendar_month.html', context)
 
 def game_view(request, month, day, year, game_id):
 
@@ -216,4 +223,166 @@ def game_view(request, month, day, year, game_id):
 	day = ordinal(int(day))
 
 	game_one = "This game will have it results soon. Tune again for that"
-	return render(request, 'yearly/game_view.html', {'game_one': game_one, 'month':month_title, 'day':day, 'year': year })
+	stats = 'Hello'
+	
+	context = {'game_one': game_one, 'month':month_title, 'day':day, 'year': year }
+	return render(request, 'yearly/game_view.html',context)
+
+def request_page(request, boton="0"):
+	if(request.GET.get('mybtn')):
+		addinone( int(request.GET.get('mytextbox')) )
+	return render(request,'yearly/march6.html')
+
+
+def addinone(number):
+	return number + 1
+	
+	
+	
+#From here on we start developing using nba_py API to get info from the official NBA stats site.
+
+def teaminfo(request):
+    theids=[]
+    abb = []
+    
+    teams = team.TeamList()
+    many_teams = teams.info()
+    
+    theids = many_teams['TEAM_ID']
+    abb = many_teams['ABBREVIATION']
+    
+    twolists = zip(theids, abb)
+    
+    context = {'theids': theids, 'twolists' : twolists }
+    return render(request, 'yearly/team.html', context)
+    
+def teamlist(request):
+    theids=[]
+    abb = []
+    
+    teams = team.TeamList()
+    many_teams = teams.info()
+    
+    theids = many_teams['TEAM_ID']
+    abb = many_teams['ABBREVIATION']
+    
+    twolists = zip(theids, abb)
+    
+    context = {'theids': theids, 'twolists' : twolists }
+    return render(request, 'yearly/teamlist.html', context)
+    
+def teamwithid(request, team_id):
+    detail = team.TeamDetails(team_id)
+    playerifo = []
+    
+    ########################
+    players = []
+    years = []
+    pos = []
+    seasons =[]
+    
+    
+    
+    ########################
+    
+    positions = {'Center':'C', 'Guard':'G', 'Forward':'F', 'Center/Forward' : 'C/F'}
+    # print(list(mydict.keys())[list(mydict.values()).index(16)])
+    hof = detail.hof()
+    
+    for i in range(len(hof)):
+        players.append(hof['PLAYER'][i])
+        years.append(hof['YEAR'][i])
+        pos.append(hof['POSITION'][i])
+        seasons.append(hof['SEASONSWITHTEAM'][i])
+
+    famers = zip(players, years, pos, seasons)
+    
+    #########################################################
+    
+    
+    #Background
+    background = detail.background()
+    
+    city = background['CITY'][0]
+    nick = background['NICKNAME'][0]
+    abbreviation = background['ABBREVIATION'][0]
+    
+    context = {'today' : 'today', 'hof' : hof, 'background':background, 'city': city, 'nick': nick, 'famers' : famers, 'abbreviation' : abbreviation }
+    
+    return render(request, 'yearly/nbainfo.html', context )
+    
+	
+def nba_py(request):
+    detail = team.TeamDetails(1610612752)
+    positions = {'Center':'C', 'Guard':'G', 'Forward':'F', 'Center/Forward' : 'C/F'}
+    # print(list(mydict.keys())[list(mydict.values()).index(16)])
+    hof = detail.hof()
+    
+    context = {'hof' : hof }
+    return render(request, 'yearly/nbainfo.html', context )
+    
+def theroster(request, team_id):
+    team_roster1 = team.TeamCommonRoster(team_id, season='2017-18')
+    
+    ###############################################################
+    
+    
+    #Background
+    detail = team.TeamDetails(team_id)
+    
+    background = detail.background()
+    
+    city = background['CITY'][0]
+    nick = background['NICKNAME'][0]
+    abbreviation = background['ABBREVIATION'][0]
+    
+    colorback = constants.TEAMS[abbreviation]['color']
+    
+    
+    ################################################################
+    
+    players = []
+    numbers = []
+    ids  = []
+    positions = []
+    
+    team_roster = team_roster1.roster()
+    
+    # this gives us one name: 
+    #team_roster = team_roster.PLAYER[0]
+    
+    for i in range(len(team_roster)):
+        players.append(team_roster['PLAYER'][i])
+        numbers.append(team_roster['NUM'][i])
+        positions.append(team_roster['POSITION'][i])
+        ids.append(team_roster['PLAYER_ID'][i])
+        #players.append(i)
+        
+        
+    rosters = zip(players, numbers, positions, ids )
+    
+    context = {'team_roster' : team_roster, 'rosters' : rosters, 'team_roster' : team_roster, 'players' : players, 'city' : city, 'nick' : nick, 'abbreviation' : abbreviation, 'colorback' : colorback }
+    
+    return render(request, 'yearly/teamroster.html', context )
+    
+    
+def players(request, first, last, player_id):
+    playersummary = player.PlayerSummary(player_id)
+    
+    playersummary = playersummary.info()
+    
+    name = playersummary['DISPLAY_FIRST_LAST'][0]
+    fname = playersummary['FIRST_NAME'][0]
+    lname = playersummary['LAST_NAME'][0]
+    birthdate = playersummary['BIRTHDATE'][0]
+    school = playersummary['SCHOOL'][0]
+    country = playersummary['COUNTRY'][0]
+    player_id = playersummary['PERSON_ID'][0]
+    
+    context =  {'name' : name, 'fname' : fname, 'lname' : lname, 'birthdate' : birthdate , 'school' : school, 'country' : country , 'player_id': player_id }
+    
+    return render(request, 'yearly/playerinfo.html', context)
+    
+    
+
+	
